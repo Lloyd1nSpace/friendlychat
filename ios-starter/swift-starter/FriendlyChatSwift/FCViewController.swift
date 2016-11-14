@@ -142,6 +142,7 @@ UITextFieldDelegate, UIImagePickerControllerDelegate, UINavigationControllerDele
         if let photoURL = AppState.sharedInstance.photoURL {
             mdata[Constants.MessageFields.photoURL] = photoURL.absoluteString
         }
+        self.ref.child("messages").childByAutoId().setValue(mdata)
     }
     
     // MARK: - Image Picker
