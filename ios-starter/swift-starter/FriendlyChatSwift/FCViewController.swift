@@ -73,6 +73,9 @@ UITextFieldDelegate, UIImagePickerControllerDelegate, UINavigationControllerDele
     }
     
     func configureStorage() {
+        
+        let storageURL = FIRApp.defaultApp()?.options.storageBucket
+        self.storageRef = FIRStorage.storage().reference(forURL: "gs://" + storageURL!)
     }
     
     func configureRemoteConfig() {
